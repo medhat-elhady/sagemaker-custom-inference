@@ -12,8 +12,7 @@ RUN wget https://bootstrap.pypa.io/get-pip.py && python3 get-pip.py && \
         rm -rf /root/.cache
 
 #pre-trained model package installation
-RUN pip install spacy
-RUN python -m spacy download en
+RUN pip install numpy pandas profit
 
 
 # Set environment variables
@@ -21,5 +20,5 @@ ENV PYTHONUNBUFFERED=TRUE
 ENV PYTHONDONTWRITEBYTECODE=TRUE
 ENV PATH="/opt/program:${PATH}"
 
-COPY NER /opt/program
+COPY TimeSeriesForcasting /opt/program
 WORKDIR /opt/program
